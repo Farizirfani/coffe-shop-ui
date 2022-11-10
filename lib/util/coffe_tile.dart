@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 class CoffeTile extends StatelessWidget {
@@ -24,18 +26,47 @@ class CoffeTile extends StatelessWidget {
             ),
 
             //coffe name
-            Column(
-              children: [
-                Text(
-                  'Latte',
-                  style: TextStyle(fontSize: 20),
-                ),
-              ],
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                vertical: 12.0,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [
+                  Text(
+                    'Latte',
+                    style: TextStyle(fontSize: 20),
+                  ),
+                  SizedBox(
+                    height: 4,
+                  ),
+                  Text(
+                    'with milk',
+                    style: TextStyle(color: Colors.grey),
+                  ),
+                ],
+              ),
             ),
-            Text(
-              'with milk',
-              style: TextStyle(color: Colors.grey),
-            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 0.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Rp.25000',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                  ),
+                  Container(
+                    padding: EdgeInsets.all(5),
+                    decoration: BoxDecoration(
+                      color: Colors.orange,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Icon(Icons.add),
+                  ),
+                ],
+              ),
+            )
           ],
         ),
       ),
